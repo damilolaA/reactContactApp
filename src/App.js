@@ -17,6 +17,7 @@ class App extends Component {
     contacts.push(contactInfo);
 
     this.setState(contacts);
+    console.log(this.state.contacts)
   }
 
   render() {
