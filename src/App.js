@@ -4,11 +4,26 @@ import ContactForm from "./components/contactForm.js";
 import './App.css';
 
 class App extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      contacts: []
+    }
+  }
+
+  handleFormData(contactInfo) {
+    var contacts = this.state.contacts;
+    contacts.push(contactInfo);
+
+    this.setState(contacts);
+  }
+
   render() {
     return (
       <div className="App">
 
-        <ContactForm />
+        <ContactForm addContact={this.handleFormData.bind(this)}/>
 
       </div>
     );
