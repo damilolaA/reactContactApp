@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import ContactForm from "./components/contactForm.js";
+import ContactList from "./components/contactDirectory.js";
 import './App.css';
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
 
         <ContactForm addContact={this.handleFormData.bind(this)}/>
 
+        <ContactList />
       </div>
     );
   }
