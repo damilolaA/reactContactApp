@@ -6,10 +6,12 @@ import './App.css';
 
 class App extends Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      contacts: []
+      contacts: [],
+      formIsActive: true,
+      contactListIsActive: true
     }
   }
 
@@ -18,16 +20,26 @@ class App extends Component {
     contacts.push(contactInfo);
 
     this.setState(contacts);
-    console.log(this.state.contacts)
+  }
+
+  showForm() {
+    let css = this.state.formIsActive ? "module-active" : "";
+    return css;
+  }
+
+  showContacts() {
+    let css = this.state.contactListIsActive ? "module-active" : "";
+    return css;
   }
 
   render() {
+
     return (
       <div className="App">
 
-        <ContactForm addContact={this.handleFormData.bind(this)}/>
+        <ContactForm onsubmit={this.showForm.bind(this)} addContact={this.handleFormData.bind(this)}/>
 
-        <ContactList />
+        <ContactList showContacts={this.showContacts.bind(this)} contactDetails={this.state.contacts}/>
       </div>
     );
   }

@@ -27,18 +27,19 @@ class contactForm extends Component {
 			}}, () => {
 				
 				this.props.addContact(this.state.contactDetails)
-				var form = this.refs.contact;
-
-				//form.classList.toggle("module-active");
 			})
 		}
+	}
+
+	handleClass() {
+		return this.props.onsubmit()
 	}
 
 	render() {
 		
 		return (
 			<div className="App">
-				<form id="add-contact" ref="contact" className="module-active" onSubmit={this.manageSubmit.bind(this)}>
+				<form id="add-contact" ref="contact" className={this.handleClass()} onSubmit={this.manageSubmit.bind(this)}>
 					<label htmlFor="add-contact" className="header">Add Contact</label>
 					<input type="text" className="contact-name" ref="fname" placeholder="Name"/>
 					<input type="text" className="phone-number" ref="number" placeholder="Phone number"/>   
