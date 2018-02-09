@@ -38,8 +38,8 @@ class contactForm extends Component {
 	render() {
 		
 		return (
-			<div className="App">
-				<form id="add-contact" ref="contact" className={this.handleClass()} onSubmit={this.manageSubmit.bind(this)}>
+			<div>
+				<form id="add-contact" ref="contact" className={this.props.activeState ? "module-active" : ""} onSubmit={this.manageSubmit.bind(this)}>
 					<label htmlFor="add-contact" className="header">Add Contact</label>
 					<input type="text" className="contact-name" ref="fname" placeholder="Name"/>
 					<input type="text" className="phone-number" ref="number" placeholder="Phone number"/>   

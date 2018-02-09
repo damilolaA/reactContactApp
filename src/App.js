@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       contacts: [],
       formIsActive: true,
-      contactListIsActive: true
+      contactListIsActive: false
     }
   }
 
@@ -20,26 +20,21 @@ class App extends Component {
     contacts.push(contactInfo);
 
     this.setState(contacts);
-  }
-
-  showForm() {
-    let css = this.state.formIsActive ? "module-active" : "";
-    return css;
+    this.setState({contactListIsActive: true});
+    console.log(this.state);
   }
 
   showContacts() {
-    let css = this.state.contactListIsActive ? "module-active" : "";
-    return css;
+    this.setState({contactListIsActive: true})
   }
 
   render() {
 
     return (
-      <div className="App">
+      <div>
+        <ContactForm activeState={this.state.formIsActive} addContact={this.handleFormData.bind(this)}/>
 
-        <ContactForm onsubmit={this.showForm.bind(this)} addContact={this.handleFormData.bind(this)}/>
-
-        <ContactList showContacts={this.showContacts.bind(this)} contactDetails={this.state.contacts}/>
+        <ContactList activeState={this.state.contactListIsActive} showContacts={this.showContacts.bind(this)} contactDetails={this.state.contacts}/>
       </div>
     );
   }

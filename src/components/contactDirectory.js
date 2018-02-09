@@ -10,14 +10,17 @@ class ContactList extends Component {
 		if(this.props.contactDetails) {
 			contacts = this.props.contactDetails.map((contact) => {
 				return (
-					<Contacts contactItems={contact}/>
+					<Contacts name={contact.fname} phone={contact.phone}/>
 				)
 			})
 		}
 
 		return (
-			<div className="App">	
-				{contacts} 
+			<div ref="contacts" id="contacts" className={this.props.activeState ? "module-active": ""}>
+				<div className="add-contact">Add Contact</div>
+				<ul id="contact-list">
+					{contacts}
+				</ul>   
 			</div>
 		)
 	}
