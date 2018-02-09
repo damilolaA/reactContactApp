@@ -31,10 +31,6 @@ class contactForm extends Component {
 		}
 	}
 
-	handleClass() {
-		return this.props.onsubmit()
-	}
-
 	render() {
 		
 		return (
@@ -51,7 +47,8 @@ class contactForm extends Component {
 }
 
 contactForm.propTypes = {
-	addContact: PropTypes.func
+	addContact: PropTypes.func,
+	activeState: PropTypes.bool
 }
 
 export default contactForm;

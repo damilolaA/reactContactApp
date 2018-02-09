@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import PropTypes from "prop-types";
+
 class ContactItems extends Component {
 
 	render() {
@@ -10,6 +12,10 @@ class ContactItems extends Component {
 			</li>
 		)
 	}
+}
+
+ContactItems.propTypes = {
+	
 }
 
 export default ContactItems

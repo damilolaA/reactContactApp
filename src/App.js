@@ -21,11 +21,6 @@ class App extends Component {
 
     this.setState(contacts);
     this.setState({contactListIsActive: true});
-    console.log(this.state);
-  }
-
-  showContacts() {
-    this.setState({contactListIsActive: true})
   }
 
   render() {
@@ -34,7 +29,7 @@ class App extends Component {
       <div>
         <ContactForm activeState={this.state.formIsActive} addContact={this.handleFormData.bind(this)}/>
 
-        <ContactList activeState={this.state.contactListIsActive} showContacts={this.showContacts.bind(this)} contactDetails={this.state.contacts}/>
+        <ContactList activeState={this.state.contactListIsActive} contactDetails={this.state.contacts}/>
       </div>
     );
   }

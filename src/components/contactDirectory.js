@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 import Contacts from "./contacts.js";
 
@@ -24,6 +25,11 @@ class ContactList extends Component {
 			</div>
 		)
 	}
+}
+
+ContactList.propTypes = {
+	contactDetails: PropTypes.array,
+	activeState: PropTypes.bool
 }
 
 export default ContactList;
