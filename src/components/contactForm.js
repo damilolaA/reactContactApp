@@ -12,6 +12,13 @@ class contactForm extends Component {
 		}
 	}
 
+	clearFormInput() {
+		if(this.props.activeState) {
+			this.refs.fname.value = "";
+			this.refs.number.value = "";
+		}
+	}
+
 	manageSubmit(e) {
 		e.preventDefault();
 
@@ -29,6 +36,8 @@ class contactForm extends Component {
 				this.props.addContact(this.state.contactDetails)
 			})
 		}
+
+		this.clearFormInput();
 	}
 
 	render() {

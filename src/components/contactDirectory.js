@@ -5,6 +5,10 @@ import Contacts from "./contacts.js";
 
 class ContactList extends Component {
 
+	showForm() {
+		this.props.userForm()
+	}
+
 	render() {
 		let contacts;
 
@@ -18,9 +22,9 @@ class ContactList extends Component {
 
 		return (
 			<div ref="contacts" id="contacts" className={this.props.activeState ? "module-active": ""}>
-				<div className="add-contact">Add Contact</div>
-				<ul id="contact-list">
-					{contacts}
+				<div className="add-contact" onClick={this.showForm.bind(this)}>Add Contact</div>
+				<ul id="contact-list"><br/>
+					{contacts} 
 				</ul>   
 			</div>
 		)

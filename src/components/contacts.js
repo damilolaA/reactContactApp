@@ -9,13 +9,15 @@ class ContactItems extends Component {
 			<li>
 				<p>{this.props.name}</p>
 				<p>{this.props.phone}</p>
+				<br/>
 			</li>
 		)
 	}
 }
 
 ContactItems.propTypes = {
-	
+	name: PropTypes.string,
+	phone: PropTypes.string
 }
 
 export default ContactItems
